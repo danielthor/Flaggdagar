@@ -1,13 +1,4 @@
-require "rubygems"
-require "twitter"
-require "date"
-
-Twitter.configure do |config|
-  config.consumer_key = ""
-  config.consumer_secret = ""
-  config.oauth_token = ""
-  config.oauth_token_secret = ""
-end
+# encoding: UTF-8
 
 # Reference: http://sv.wikipedia.org/wiki/Flaggdagar_i_Sverige
 FLAG_DAYS = {
@@ -30,14 +21,12 @@ FLAG_DAYS = {
   "25 december"  => "Idag flaggar vi för att det är Juldagen http://j.mp/cXHXLZ #svpt"
 }
 
-def log(message)
-  time = Time.now.strftime("%Y-%m-%d %H:%M:%S")
-  File.open("/home/daniel/project/flaggdagar/whatsup.log", 'a') { |f| f.write("[#{time}] #{message}\n") }
-end
-
-if message = FLAG_DAYS[FLAG_DAYS.keys.detect { |day| Date.parse(day) == Date.today }]
-  log "Tweeet! #{message}"
-  Twitter.update(message)
-else
-  log "Nothing to tweet today."
+desc "Check if the current day is a flag day and tweet if it is"
+task :check_flag_day do
+  if message = FLAG_DAYS[FLAG_DAYS.keys.detect { |day| Date.parse(day) == Date.today }]
+    log "Tweeet! #{message}"
+    Twitter.update(message)
+  else
+    log "Nothing to tweet today."
+  end
 end

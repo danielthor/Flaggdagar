@@ -22,7 +22,7 @@ FLAG_DAYS = {
 }
 
 desc "Check if the current day is a flag day and tweet if it is"
-task :check_flag_day do
+task :flaggdagar do
   if message = FLAG_DAYS[FLAG_DAYS.keys.detect { |day| Date.parse(day) == Date.today }]
     puts "Tweeet! #{message}"
     #Twitter.update(message)

@@ -1,1 +1,2 @@
-Script that sends out a tweet when there is a public flag day in Sweden.
+Rake tast that sends out a tweet when there is a public flag day in Sweden.
+$ bundle exec rake flaggdagar

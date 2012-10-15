@@ -17,9 +17,3 @@ if File.exists?(twitter_config_file)
     config.oauth_token_secret = twitter_config['twitter']['oauth_token_secret']
   end
 end
-
-# Log helper
-def log(message)
-  time = Time.now.strftime("%Y-%m-%d %H:%M:%S")
-  File.open(File.join(File.dirname(__FILE__), 'flaggdagar.log'), 'a') { |f| f.write("[#{time}] #{message}\n") }
-end

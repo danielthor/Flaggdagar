@@ -1,2 +1,9 @@
-Rake tast that sends out a tweet when there is a public flag day in Sweden.
-$ bundle exec rake flaggdagar
+Rake task that sends out a tweet if the current day is a public flag day in Sweden.
+
+Scheduled to run every day at 6:30am:
+$ bundle exec rake flaggdagar:check
+
+Tweet manually (for testing):
+$ bundle exec rake flaggdagar:tweet["My message"]
+
+Currently deployed on Heroku, using Scheduler add-on.

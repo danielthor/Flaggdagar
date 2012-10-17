@@ -26,7 +26,7 @@ namespace :flaggdagar do
   task :check do
     if message = FLAG_DAYS[FLAG_DAYS.keys.detect { |day| Date.parse(day) == Date.today }]
       puts "Tweet! #{message}"
-      #Twitter.update(message)
+      Twitter.update(message)
     else
       puts "Nothing to tweet today."
     end
@@ -34,7 +34,7 @@ namespace :flaggdagar do
   
   desc "Manually tweet something"
   task :tweet, :message do |t, args|
-    p "Tweeting: #{args.message}"
+    puts "Tweeting: #{args.message}"
     Twitter.update(args.message)
   end
 end

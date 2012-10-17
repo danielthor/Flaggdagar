@@ -21,12 +21,20 @@ FLAG_DAYS = {
   "25 december"  => "Idag flaggar vi för att det är Juldagen http://j.mp/cXHXLZ #svpt"
 }
 
-desc "Check if the current day is a flag day and tweet if it is"
-task :flaggdagar do
-  if message = FLAG_DAYS[FLAG_DAYS.keys.detect { |day| Date.parse(day) == Date.today }]
-    puts "Tweet! #{message}"
-    #Twitter.update(message)
-  else
-    puts "Nothing to tweet today."
+namespace :flaggdagar do
+  desc "Check if the current day is a flag day and tweet if it is"
+  task :check do
+    if message = FLAG_DAYS[FLAG_DAYS.keys.detect { |day| Date.parse(day) == Date.today }]
+      puts "Tweet! #{message}"
+      #Twitter.update(message)
+    else
+      puts "Nothing to tweet today."
+    end
+  end
+  
+  desc "Manually tweet something"
+  task :tweet, :message do |t, args|
+    p "Tweeting: #{args.message}"
+    Twitter.update(args.message)
   end
 end

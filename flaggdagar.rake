@@ -17,7 +17,7 @@ FLAG_DAYS = {
   "24 october"   => "Idag flaggar vi för att det är FN-dagen! http://j.mp/db9Kak #svpt",
   "6 november"   => "Idag flaggar vi för att det är Gustav Adolfsdagen! http://j.mp/d4X2bE #svpt",
   "10 december"  => "Idag flaggar vi för att det är Nobeldagen! http://j.mp/dktGCo #svpt",
-  "23 december"  => "Idag flaggar vi för att det är Drottning! Silvias födelsedag http://j.mp/cSJXPi #svpt",
+  "23 december"  => "Idag flaggar vi för att det är Drottning Silvias födelsedag! http://j.mp/cSJXPi #svpt",
   "25 december"  => "Idag flaggar vi för att det är Juldagen! http://j.mp/cXHXLZ #svpt"
 }
 

@@ -6,4 +6,4 @@ $ bundle exec rake flaggdagar:check
 Tweet manually (for testing):
 $ bundle exec rake flaggdagar:tweet["My message"]
 
-Currently deployed on Heroku, using Scheduler add-on.
+Currently deployed on Heroku, using Scheduler add-on, tweeting to @flaggdagar.

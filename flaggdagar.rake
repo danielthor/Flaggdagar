@@ -1,5 +1,7 @@
 # encoding: UTF-8
 
+require 'date'
+
 # Reference: http://sv.wikipedia.org/wiki/Flaggdagar_i_Sverige
 FLAG_DAYS = {
   "1 january"    => "Idag flaggar vi för att det är Nyårsdagen! http://j.mp/aysf7z #svpt",
